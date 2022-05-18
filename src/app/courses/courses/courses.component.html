@@ -1,30 +1,34 @@
-<table mat-table [dataSource]="courses" class="mat-elevation-z8">
+<mat-card>
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <!--Usar o mesmo que foi declarado na interface-->
-    <th mat-header-cell *matHeaderCellDef>Curso</th>
-    <td mat-cell *matCellDef="let course">{{ course.name }}</td>
-  </ng-container>
+  <mat-toolbar>Cursos Disponíveis</mat-toolbar>
 
-  <!-- Category Column -->
-  <ng-container matColumnDef="category">
-    <th mat-header-cell *matHeaderCellDef>Categoria</th>
-    <td mat-cell *matCellDef="let course">{{ course.category }}</td>
-  </ng-container>
+  <table mat-table [dataSource]="courses" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <!--Usar o mesmo que foi declarado na interface-->
+      <th mat-header-cell *matHeaderCellDef>Curso</th>
+      <td mat-cell *matCellDef="let course">{{ course.name }}</td>
+    </ng-container>
 
-  <!-- Time Column -->
-  <ng-container matColumnDef="time">
-    <th mat-header-cell *matHeaderCellDef>Tempo de Curso</th>
-    <td mat-cell *matCellDef="let course">{{ course.time }}</td>
-  </ng-container>
+    <!-- Category Column -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Categoria</th>
+      <td mat-cell *matCellDef="let course">{{ course.category }}</td>
+    </ng-container>
 
-  <!-- Number Column -->
-  <ng-container matColumnDef="number">
-    <th mat-header-cell *matHeaderCellDef>Numero de Aulas</th>
-    <td mat-cell *matCellDef="let course">{{ course.number }}</td>
-  </ng-container>
+    <!-- Time Column -->
+    <ng-container matColumnDef="time">
+      <th mat-header-cell *matHeaderCellDef>Tempo de Curso</th>
+      <td mat-cell *matCellDef="let course">{{ course.time }}h</td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
+    <!-- Number Column -->
+    <ng-container matColumnDef="number">
+      <th mat-header-cell *matHeaderCellDef>Numero de Aulas</th>
+      <td mat-cell *matCellDef="let course">{{ course.number }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</mat-card>
